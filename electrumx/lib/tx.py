@@ -622,7 +622,8 @@ class DeserializerDecred(Deserializer):
         '''Returns a list of (deserialized_tx, tx_hash) pairs.'''
         read = self.read_tx_and_hash
         txs = [read() for _ in range(self._read_varint())]
-        return txs
+        stxs = [read() for _ in range(self._read_varint())]
+        return txs + stxs
 
     def read_tx_tree(self):
         '''Returns a list of deserialized_tx without tx hashes.'''

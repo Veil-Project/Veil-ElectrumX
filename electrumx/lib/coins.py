@@ -2290,7 +2290,7 @@ class GINCoin(Coin):
             return lyra2z_hash.getPoWHash(header)
         import neoscrypt
         return neoscrypt.getPoWHash(header)
-        
+
 
 class Polis(Coin):
     NAME = "Polis"
@@ -3013,4 +3013,3 @@ class Veil(Coin):
     def header_hash(cls, header):
         '''Given a header return the hash.'''
         return double_sha256(header)
-
