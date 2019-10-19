@@ -7,6 +7,29 @@
    and memory consumption whilst serving clients.  Those problems
    should not occur with Python 3.7.
 
+Version 1.13.0 (26 Sep 2019)
+============================
+
+* daemon: use a single connection for all requests rather than a connection per request.
+  Distinguish handling of JSON and HTTP errors
+* recognise OP_FALSE OP_RETURN scripts as unspendable
+* peers - attempt to bind to correct local IP address
+* improve name support (domob1812)
+* coin additions / updates: BitZeny (y-chan), ZCoin (a-bezrukov), Emercoin (yakimka),
+  BSV (Roger Taylor), Bellcoin (streetcrypto7), Ritocoin (traysi), BTC (Sombernight),
+  PIVX (mrcarlanthony), Monacoin (wakiyamap)), NamecoinRegtest (JeremyRand), Axe (ddude1),
+  Xaya (domob1812), GZRO (MrNaif2018), Ravencoin (standard-error)
+* other: gits7r
+
+Version 1.12.0 (13 May 2019)
+============================
+
+* require aiorpcX 0.18.1.  This introduces websocket support.  The environment variables
+  changed accordingly; see :envvar:`SERVICES` and :envvar:`REPORT_SERVICES`.
+* work around bug in recent versions of uvloop
+* aiorpcX upgrade fixes from Shane M
+* coin additions / updates: BitcoinSV, Bolivarcoin (Jose Luis Estevez), BTC Testnet (ghost43),
+  Odin (Pixxl)
 
 Version 1.11.0 (18 Apr 2019)
 ============================
@@ -202,8 +225,6 @@ Version 1.8  (06 Aug 2018)
 
 
 **Neil Booth**  kyuupichan@gmail.com  https://github.com/kyuupichan
-
-1BWwXJH3q6PRsizBkSGm2Uw4Sz1urZ5sCj
 
 .. _#521: https://github.com/kyuupichan/electrumx/issues/521
 .. _#552: https://github.com/kyuupichan/electrumx/issues/552

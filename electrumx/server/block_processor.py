@@ -690,7 +690,7 @@ class DecredBlockProcessor(BlockProcessor):
         return start, count
 
 
-class NamecoinBlockProcessor(BlockProcessor):
+class NameIndexBlockProcessor(BlockProcessor):
 
     def advance_txs(self, txs):
         result = super().advance_txs(txs)
@@ -814,3 +814,12 @@ class LTORBlockProcessor(BlockProcessor):
                     add_touched(cache_value[:-12])
 
         self.tx_count -= len(txs)
+
+
+class VeilBlockProcessor(BlockProcessor):
+    async def calc_reorg_range(self, count):
+        start, count = await super().calc_reorg_range(count)
+        if start > 0:
+            start -= 1
+            count += 1
+        return start, count
